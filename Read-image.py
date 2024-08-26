@@ -11,7 +11,7 @@ else:
     resized_image = cv2.resize(image, (600, 400))
 
     # Display the resized image
-    cv2.imshow('Resized Image', resized_image)
+    cv2.imshow('Dekhla photo', resized_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     #ajj ka kaam khatam
