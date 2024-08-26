@@ -14,3 +14,4 @@ else:
     cv2.imshow('Resized Image', resized_image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+    #ajj ka kaam khatam
