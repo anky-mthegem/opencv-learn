@@ -15,3 +15,4 @@ else:
     cv2.waitKey(0)
     cv2.destroyAllWindows()
     #ajj ka kaam khatam
+    #successfully read image on 26/08/2024
