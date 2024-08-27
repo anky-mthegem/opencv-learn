@@ -4,8 +4,11 @@ print("video",video)
 
 while True:
     ret,frame = video.read()
+    #bnb = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     cv2.imshow("AA CHAKK VIDEO",frame)
-    k = cv2.waitKey(30)
+    bnb = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    cv2.imshow("BLACK & WHITE VIDEO DEKHO",bnb)
+    k = cv2.waitKey(33)
     if k == ord("e"):
         break
 video.release()
