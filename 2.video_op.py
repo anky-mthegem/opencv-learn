@@ -4,9 +4,10 @@ print("video",video)
 
 while True:
     ret,frame = video.read()
-    #frame = cv2.resize(frame,(700,450))
-    cv2.imshow("frame",frame)
-
-cv2.waitKey(0)
+    cv2.imshow("AA CHAKK VIDEO",frame)
+    k = cv2.waitKey(30)
+    if k == ord("e"):
+        break
 video.release()
+#exit()
 cv2.destroyAllWindows()
