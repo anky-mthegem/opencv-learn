@@ -1,7 +1,7 @@
 import cv2
 
 # Read the image
-image = cv2.imread("C:\\Users\\amanr\\Downloads\\cv_test1.jpeg")
+image = cv2.imread("C:\\Users\\amanr\\Downloads\\cv_test1.jpeg",1)
 
 # Check if the image is loaded properly
 if image is None:
