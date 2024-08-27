@@ -5,6 +5,6 @@ print("video",video)
 while True:
     ret,frame = video.read()
     cv2.imshow("frame",frame)
-cv2.waitKey(0)
+cv2.waitKey(15000)
 video.release()
 cv2.destroyAllWindows()
