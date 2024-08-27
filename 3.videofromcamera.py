@@ -2,6 +2,9 @@ import cv2
 
 vid = cv2.VideoCapture(0)
 print(vid)
+fourcc = cv2.VideoWriter_fourcc(*'XVID')
+out_color = cv2.VideoWriter('output_color.avi', fourcc, 20.0, (640, 480)) #use fourcc function to make a output file name output_color
+out_gray = cv2.VideoWriter('output_gray.avi', fourcc, 20.0, (640, 480))
 while vid.isOpened():
     ret,frame = vid.read()
     if ret == True:
@@ -9,6 +12,8 @@ while vid.isOpened():
         cv2.imshow("CAMERA DI VIDEO",frame)
         gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
         cv2.imshow("B&B dekho ji",gray)
+        out_color.write(frame)
+        out_gray.write(gray)
         k = cv2.waitKey(1)
     if k == ord("e"):
             break
