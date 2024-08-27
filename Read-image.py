@@ -12,7 +12,10 @@ else:
 
     # Display the resized image
     cv2.imshow('Dekhla photo', resized_image)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    k = cv2.waitKey(0)
+    if k==ord("s"):
+        cv2.imwrite("C:\\Users\\amanr\\Downloads\\cv_test1_s.jpeg",image)
+    else:
+     cv2.destroyAllWindows()
     #ajj ka kaam khatam
     #successfully read image on 26/08/2024
