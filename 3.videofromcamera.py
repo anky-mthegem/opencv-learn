@@ -19,3 +19,4 @@ while vid.isOpened():
             break
 vid.release()
 cv2.destroyAllWindows()
+#will start with video manipulation now
