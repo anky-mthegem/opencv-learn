@@ -10,8 +10,8 @@ print(vid)
 while vid.isOpened():
     ret,frame = vid.read()
     if ret == True:
-        #color = cv2.resize(frame,(700,450))
-        cv2.imshow("CAMERA DI VIDEO",frame)
+        color = cv2.resize(frame,(700,450))
+        cv2.imshow("CAMERA DI VIDEO",color)
         #out_color.write(frame)
         #gray = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
         #cv2.imshow("B&B dekho ji",gray)
