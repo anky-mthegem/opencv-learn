@@ -1,7 +1,7 @@
 import cv2  
 import numpy as np  
  
-camera_height = 250 
+camera_height = 240 
  
 P1Default = 8     # Blur Amount  
 P2Default = 90    # Canny threshold1  
@@ -11,7 +11,7 @@ P5Default = 2     # Dilation para2
 P6Default = 3000   # Area Threshold  
  
 def main():  
-    # Start video capture from the USB camera  
+    # Start video capture from the camera  
     ipcamera = "http://192.168.137.13:8080/video"
     cap = cv2.VideoCapture(0)
     cap.open(ipcamera)
@@ -25,15 +25,20 @@ def main():
     cv2.namedWindow('Original')  
     cv2.namedWindow('Gray')  
     cv2.namedWindow('Blur')  
-    cv2.namedWindow('Canny')  
+    cv2.namedWindow('Canny') 
     cv2.namedWindow('Dialated')  
     cv2.namedWindow('Final')  
-    cv2.createTrackbar('P1', 'Blur', P1Default, 200, onTrackbarChange1)  
+    #cv2.resizeWindow('Final', 400, 400)
+    cv2.createTrackbar('P1', 'Blur', P1Default, 200, onTrackbarChange1) 
+    cv2.resizeWindow('Blur', 400, 400) 
     cv2.createTrackbar('P2', 'Canny', P2Default, 255, onTrackbarChange1)  
     cv2.createTrackbar('P3', 'Canny', P3Default, 255, onTrackbarChange1)  
+    cv2.resizeWindow('Canny', 400, 400)
     cv2.createTrackbar('P4', 'Dialated', P4Default, 10, onTrackbarChange1)  
-    cv2.createTrackbar('P5', 'Dialated', P5Default, 10, onTrackbarChange1)  
+    cv2.createTrackbar('P5', 'Dialated', P5Default, 10, onTrackbarChange1) 
+    cv2.resizeWindow('Dialated', 400, 400) 
     cv2.createTrackbar('P6', 'Final', P6Default, 5000, onTrackbarChange1)  
+    cv2.resizeWindow('Final', 400, 400)
  
     while True:  
         ret, frame = cap.read()  
@@ -42,7 +47,8 @@ def main():
             break  
  
         # Show the frame  
-        cv2.imshow('Original', frame)  
+        color = cv2.resize(frame,(700,450))
+        cv2.imshow('Original', color)  
  
         # Check for key presses  
         key = cv2.waitKey(1) & 0xFF  
@@ -105,7 +111,7 @@ def process_frame(frame):
             cv2.putText(frame, f'(X: {CX}, Y: {CY})',  
                         (box[0][0], box[0][1] + 15), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 1)  
  
-    # Show the processed result  
+    # Show the processed result 
     cv2.imshow('Gray', gray)
     cv2.imshow('Blur', blurred)  
     cv2.imshow('Canny', edged)  
