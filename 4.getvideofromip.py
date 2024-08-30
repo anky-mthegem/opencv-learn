@@ -1,4 +1,5 @@
 #using mobile camera server for trial. Later GIGE camera can be used using ip
+#pip install --upgrade ffmpeg-python if there is overread issue in parsing video
 import cv2
 ipcamera = "http://192.168.137.13:8080/video"
 vid = cv2.VideoCapture(0)

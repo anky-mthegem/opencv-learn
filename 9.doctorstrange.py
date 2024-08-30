@@ -34,7 +34,7 @@ while True:
     # Check if circles detected
     if circles is not None:
         # Get hand center coordinates
-        hand_center = (circles[0][0][0], circles[0][0][1])
+        hand_center = (int(circles[0][0][0]), int(circles[0][0][1]))
         
         # Draw circle around hand
         cv2.circle(frame, hand_center, circle_radius, circle_color, 2)
