@@ -1,8 +1,9 @@
 import cv2  
 import numpy as np  
+import snap7
  
 camera_height = 240 
- 
+
 P1Default = 8     # Blur Amount  
 P2Default = 90    # Canny threshold1  
 P3Default = 120   # Canny threshold2  
@@ -48,6 +49,7 @@ def main():
  
         # Show the frame  
         color = cv2.resize(frame,(700,450))
+        color = cv2.circle()
         cv2.imshow('Original', color)  
  
         # Check for key presses  
