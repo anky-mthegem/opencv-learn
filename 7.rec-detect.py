@@ -13,7 +13,7 @@ P6Default = 3000   # Area Threshold
  
 def main():  
     # Start video capture from the camera  
-    ipcamera = "http://192.168.137.13:8080/video"
+    ipcamera = "http://192.168.137.175:8080/video"
     cap = cv2.VideoCapture(0)
     cap.open(ipcamera)
     print(cap)
@@ -31,15 +31,15 @@ def main():
     cv2.namedWindow('Final')  
     #cv2.resizeWindow('Final', 400, 400)
     cv2.createTrackbar('P1', 'Blur', P1Default, 200, onTrackbarChange1) 
-    cv2.resizeWindow('Blur', 400, 400) 
+    #cv2.resizeWindow('Blur', 400, 400) 
     cv2.createTrackbar('P2', 'Canny', P2Default, 255, onTrackbarChange1)  
     cv2.createTrackbar('P3', 'Canny', P3Default, 255, onTrackbarChange1)  
-    cv2.resizeWindow('Canny', 400, 400)
+    #cv2.resizeWindow('Canny', 400, 400)
     cv2.createTrackbar('P4', 'Dialated', P4Default, 10, onTrackbarChange1)  
     cv2.createTrackbar('P5', 'Dialated', P5Default, 10, onTrackbarChange1) 
-    cv2.resizeWindow('Dialated', 400, 400) 
+    #cv2.resizeWindow('Dialated', 400, 400) 
     cv2.createTrackbar('P6', 'Final', P6Default, 5000, onTrackbarChange1)  
-    cv2.resizeWindow('Final', 400, 400)
+    #cv2.resizeWindow('Final', 400, 400)
  
     while True:  
         ret, frame = cap.read()  
@@ -49,7 +49,7 @@ def main():
  
         # Show the frame  
         color = cv2.resize(frame,(700,450))
-        color = cv2.circle()
+        #color = cv2.circle()
         cv2.imshow('Original', color)  
  
         # Check for key presses  

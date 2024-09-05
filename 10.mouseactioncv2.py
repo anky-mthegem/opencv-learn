@@ -6,13 +6,22 @@ import numpy as np
 ipcamera = "http://192.168.137.175:8080/video"
 cap = cv2.VideoCapture(0)
 cap.open(ipcamera)
-
+font = cv2.FONT_HERSHEY_PLAIN
 # Set initial zoom level
 zoom_level = 1.0
 
 # Define mouse callback function
 def mouse_callback(event, x, y, flags, params):
+    print("event =",event)
+    print("X =",x)
+    print("y =",y)
+    print("flag =",flags)
+    print("param =",params)
     global zoom_level
+    if event == cv2.EVENT_LBUTTONDOWN:
+        cord = ','+str(x) + ','+str(y)
+        cv2.putText(zoomed_frame,cord,(x,y),font,1,(155,125,100),2)
+        #cv2.imshow('cordinates',zoomed_frame)
     if event == cv2.EVENT_MOUSEWHEEL:
         if flags > 0:  # Mouse wheel scrolled up
             zoom_level += 0.1
