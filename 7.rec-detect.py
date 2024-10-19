@@ -1,6 +1,6 @@
 import cv2  
 import numpy as np  
-import snap7
+
  
 camera_height = 240 
 

@@ -24,7 +24,7 @@ cv2.createTrackbar("b","color picker",0,255,cross)
 while True:
     cv2.imshow("color picker",img)
     k = cv2.waitKey(1)
-    if k==ord("e"): #27 is keyword for esc key pressed
+    if k==27: #27 is keyword for esc key pressed
         break
 
     #get trackbar position
